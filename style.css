@@ -1,0 +1,358 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    /* 기본값은 16px */
+}
+
+li {
+    list-style: none;
+    /* 블릿문자삭제 */
+}
+
+a {
+    text-decoration: none;
+    /* 밑줄삭제 */
+    color: #333;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* wrap  */
+#wrap {
+    width: 1000px;
+    border: 1px solid red;
+    margin: auto;
+}
+
+/* header */
+#header {}
+
+#header h1 {
+    float: left;
+    width: 130px;
+    padding-top: 5px;
+}
+
+#header h1 a {}
+
+#header h1 a img {
+    width: 100%;
+}
+
+#header .nav {
+    float: right;
+    margin-top: 20px;
+}
+
+#header .nav ul {}
+
+#header .nav ul li {
+    position: relative;
+    float: left;
+    width: 120px;
+    text-align: center;
+    background-color: blueviolet;
+}
+
+#header .nav ul li a {
+    /* a는 인라인요소, 인라인요소는 margin,padding 양쪽(좌우)만적용 상하는 적용안됨 */
+    display: block;
+    padding: 20px 15px;
+    background-color: #ccc;
+}
+
+#header .nav ul li a:hover {
+
+    /* :hover --> 영역에 마우스가 진입하면 */
+    background-color: #ddd;
+    transition: 0.3s;
+}
+
+#header .nav ul li .submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 59px;
+    z-index: 10;
+}
+
+/* banner */
+#banner {
+    height: 378px;
+    overflow: hidden;
+}
+
+#banner .slideList {
+    position: relative;
+}
+
+#banner .slideList .slideImg {
+    position: relative;
+}
+
+#banner .slideList .slideImg h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+#banner .slideList .slideImg Img {
+    /*img태그의 빈공간 처리 
+    1)display: block;
+    2)vertical-align:top; */
+
+    width: 100%;
+    vertical-align: top;
+}
+
+/* content1 */
+#content1 {
+    margin-top: 15px;
+}
+
+#content1 .notice {
+    position: relative;
+    float: left;
+    width: 49%;
+    border: 1px solid #ccc;
+    /* border-width: 1px;
+    border-color: #ccc;
+    border-style: solid; */
+    box-sizing: border-box;
+    padding: 30px;
+    height: 218px;
+}
+
+#content1 .notice ul {}
+
+#content1 .notice ul li {
+    float: left;
+}
+
+#content1 .notice ul li a {
+    font-size: 24px;
+    color: #999;
+    font-weight: bold;
+    /* 폰트의 두께 */
+}
+
+#content1 .notice ul li.active a {
+    color: #000;
+}
+
+#content1 .notice ul li ul {
+    position: absolute;
+    left: 30px;
+    top: 70px;
+}
+
+#content1 .notice ul li ul li {}
+
+#content1 .notice ul li ul li a {
+    float: left;
+    width: 68%;
+    /* 말줄임말 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* end 말줄임말 */
+}
+
+#content1 .notice ul li ul li span {
+    float: right;
+    padding-right: 5%;
+}
+
+#content1 .ad {
+    float: right;
+    width: 49%;
+}
+
+#content1 .ad a {}
+
+#content1 .ad a img {
+    width: 100%;
+}
+
+/* content2 */
+
+#content2 {
+    margin-top: 15px;
+}
+
+#content2 h2 {
+    margin-bottom: 10px;
+}
+
+#content2 ul {}
+
+#content2 ul li {
+    width: 24.25%;
+    float: left;
+    margin-right: 1%;
+}
+
+#content2 ul li:last-child {
+    margin-right: 0;
+}
+
+/* :last-child --> li중에서 막내호출 */
+#content2 ul li div {
+    overflow: hidden;
+}
+
+#content2 ul li div img {
+    width: 100%;
+    transition: 0.3s;
+}
+
+#content2 ul li div:hover img {
+    transform: scale(1.2);
+}
+
+#content2 ul li span {}
+
+/* 팝업 */
+
+.layer-bg {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* = width: 100%; height: 100%; */
+    background-color: rgba(0, 0, 0, 0.8)
+}
+
+.layer-bg .layer {
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    padding: 30px;
+}
+
+.layer-bg .layer h2 {
+    font-size: 35px;
+}
+
+.layer-bg .layer .close {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+/* footer */
+#footer {
+    border-top: 1px solid #ccc;
+    margin-top: 30px;
+    padding: 30px 0;
+    position: relative;
+}
+
+#footer address {
+    /* address 태그는 기울임체(italic)임 --> 일반(normal) */
+    font-style: normal;
+}
+
+#footer address ul {
+    width: 661px;
+}
+
+#footer address ul li {
+    /* inline요소는 margin, padding의 상하는 적용안 됨, 좌우는 적용됨 */
+    /* margin, padding를 백분율(%) --> 기분은 부모의 넓이 */
+    display: inline;
+    padding: 0 15px 0 15px;
+    position: relative;
+}
+
+#footer address ul li:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 4px;
+    width: 1px;
+    height: 13px;
+    background-color: #666;
+}
+
+#footer address ul li:nth-child(3):after,
+#footer address ul li:last-child:after {
+    height: 0;
+    width: 0;
+}
+
+#footer address ul li.left {
+    padding-left: 0;
+}
+
+#footer address p {
+    text-transform: uppercase;
+    /* 대문자 */
+    padding-top: 30px;
+}
+
+.ani_txt {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 210px;
+    height: 20px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.ani_txt ul {
+    position: relative;
+    left: 10px;
+    top: 0;
+    animation: text_ani 6s infinite;
+}
+
+.ani_txt ul li {}
+
+.ani_txt ul li a {}
+
+@keyframes text_ani {
+    0% {
+        top: 0;
+    }
+
+    20% {
+        top: -18px;
+    }
+
+    40% {
+        top: -36px;
+    }
+
+    60% {
+        top: -54px;
+    }
+
+    80% {
+        top: -72px;
+    }
+
+    100% {
+        top: -90px;
+    }
+}
